@@ -47,7 +47,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                     Console.WriteLine("Enter To Location:");
                     string toLocation = Console.ReadLine();
 
-                    if (flightID != null || fromLocation != null || toLocation != null)
+                    if (flightID != null && fromLocation != null && toLocation != null)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Flight added successfully.");
