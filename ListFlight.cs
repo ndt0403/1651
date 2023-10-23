@@ -42,6 +42,20 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         continue;
                     }
 
+                    Console.WriteLine("Enter From Location:");
+                    string fromLocation = Console.ReadLine();
+
+                    Console.WriteLine("Enter To Location:");
+                    string toLocation = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(fromLocation) || string.IsNullOrWhiteSpace(toLocation))
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("From Location and To Location cannot be empty. Please enter them.");
+                        Console.ResetColor();
+                        continue;
+                    }
+
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Flight added successfully.");
                     Console.ResetColor();
@@ -96,11 +110,6 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void AddTypeOfSeat()
         {
-            Console.WriteLine("Enter From Location:");
-            string fromLocation = Console.ReadLine();
-
-            Console.WriteLine("Enter To Location:");
-            string toLocation = Console.ReadLine();
 
             while (true)
             {
