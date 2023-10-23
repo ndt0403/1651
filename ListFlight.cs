@@ -34,7 +34,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                     Console.WriteLine("Enter Flight ID:");
                     string flightID = Console.ReadLine();
                  
-                    if (!CheckFlightIdUnique(flightID))
+                    if (!CheckFlight(flightID))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Flight ID already exists. Please enter a unique Flight ID.");
@@ -78,7 +78,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             }
         }
 
-        private bool CheckFlightIdUnique(string flightID)
+        private bool CheckFlight(string flightID)
         {
             return flights.All(flight => flight.FlightID != flightID);
         }
