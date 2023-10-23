@@ -32,7 +32,10 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                 {
                     Console.WriteLine("Enter Flight ID:");
                     string flightID = Console.ReadLine();
-
+                    Console.WriteLine("Enter From Location:");
+                    string fromLocation = Console.ReadLine();
+                    Console.WriteLine("Enter To Location:");
+                    string toLocation = Console.ReadLine();
                     if (!CheckFlightIdUnique(flightID))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -41,26 +44,11 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         continue;
                     }
 
-                    Console.WriteLine("Enter From Location:");
-                    string fromLocation = Console.ReadLine();
-
-                    Console.WriteLine("Enter To Location:");
-                    string toLocation = Console.ReadLine();
-
-                    if (flightID != null && fromLocation != null && toLocation != null)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Flight added successfully.");
-                        Console.ResetColor();
-                        AddTypeOfSeat();
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine("Incomplete information. Please enter Flight ID, From Location, and To Location.");
-                        Console.ResetColor();
-                    }
-                    break;  // Exit the loop if the flight information is entered correctly.
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Flight added successfully.");
+                    Console.ResetColor();
+                    AddTypeOfSeat();
+                    break; // Exit the loop if the flight information is entered correctly.
                 }
                 catch (FormatException)
                 {
