@@ -42,13 +42,16 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         continue;
                     }
 
+                    Flight newFlight = new Flight();
+                    newFlight.FlightID = flightID;
+
                     Console.WriteLine("Enter From Location:");
-                    string fromLocation = Console.ReadLine();
+                    newFlight.FromLocation = Console.ReadLine();
 
                     Console.WriteLine("Enter To Location:");
-                    string toLocation = Console.ReadLine();
+                    newFlight.ToLocation = Console.ReadLine();
 
-                    if (string.IsNullOrWhiteSpace(fromLocation) || string.IsNullOrWhiteSpace(toLocation))
+                    if (string.IsNullOrWhiteSpace(newFlight.FromLocation) || string.IsNullOrWhiteSpace(newFlight.ToLocation))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("From Location and To Location cannot be empty. Please enter them.");
@@ -56,9 +59,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         continue;
                     }
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Flight added successfully.");
-                    Console.ResetColor();
+                    flights.Add(newFlight);
 
                     AddTypeOfSeat();
                     break; // Exit the loop if the flight information is entered correctly.
