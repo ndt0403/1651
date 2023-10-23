@@ -26,16 +26,14 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void AddFlight()
         {
+
             while (true)
             {
                 try
                 {
                     Console.WriteLine("Enter Flight ID:");
                     string flightID = Console.ReadLine();
-                    Console.WriteLine("Enter From Location:");
-                    string fromLocation = Console.ReadLine();
-                    Console.WriteLine("Enter To Location:");
-                    string toLocation = Console.ReadLine();
+                 
                     if (!CheckFlightIdUnique(flightID))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -47,6 +45,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Flight added successfully.");
                     Console.ResetColor();
+
                     AddTypeOfSeat();
                     break; // Exit the loop if the flight information is entered correctly.
                 }
@@ -97,6 +96,12 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void AddTypeOfSeat()
         {
+            Console.WriteLine("Enter From Location:");
+            string fromLocation = Console.ReadLine();
+
+            Console.WriteLine("Enter To Location:");
+            string toLocation = Console.ReadLine();
+
             while (true)
             {
                 try
