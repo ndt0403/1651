@@ -9,6 +9,8 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
     internal class Flight
     {
         private string flightID;
+        private string fromLocation;
+        private string toLocation;
         private string seatID;
         private string cabin;
 
@@ -16,6 +18,16 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
         {
             get { return flightID; }
             set { flightID = value; }
+        }
+        public string FromLocation
+        {
+            get { return fromLocation; }
+            set { fromLocation = value; }
+        }
+        public string ToLocation
+        {
+            get { return toLocation; }
+            set { toLocation = value; }
         }
         public string SeatID
         {
@@ -31,10 +43,12 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public Flight() { }
 
-        public Flight(string flightID, string seatID, string cabin)
+        public Flight(string flightID, string fromLocation, string toLocation, string seatID, string cabin)
         {
             // Parameterized constructor to initialize flight attributes.
             FlightID = flightID;
+            FromLocation = fromLocation;
+            ToLocation = toLocation;
             SeatID = seatID;
             Cabin = cabin;
         }
@@ -45,6 +59,10 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             Console.WriteLine("===================");
             Console.WriteLine("Flight information:");
             Console.WriteLine("Flight ID: " + FlightID);
+            Console.WriteLine("From: " + FromLocation);
+            Console.WriteLine("To: " + ToLocation);
+            Console.WriteLine("Seat ID: " + SeatID);
+            Console.WriteLine("Cabin: " + Cabin);
         }
     }
 }

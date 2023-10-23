@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using static ASM2_1651_NguyenDinhTam_GCD210186.Flight;
 
 namespace ASM2_1651_NguyenDinhTam_GCD210186
 {
@@ -18,7 +17,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void DisplayFlight()
         {
-            // Display information for each employee in the list.
+            // Display information for each flight in the list.
             foreach (Flight flight in flights)
             {
                 flight.displayInformation();
@@ -27,15 +26,60 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void AddFlight()
         {
-            Flight newFlight = new Flight();
-            Console.WriteLine("Enter Flight ID:");
-            newFlight.FlightID = Console.ReadLine();
-            flights.Add(newFlight);
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Enter Flight ID:");
+                    string flightID = Console.ReadLine();
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Flight added successfully.");
-            Console.ResetColor();
-            AddTypeOfSeat();
+                    if (!CheckFlightIdUnique(flightID))
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("Flight ID already exists. Please enter a unique Flight ID.");
+                        Console.ResetColor();
+                        continue;
+                    }
+
+                    Console.WriteLine("Enter From Location:");
+                    string fromLocation = Console.ReadLine();
+
+                    Console.WriteLine("Enter To Location:");
+                    string toLocation = Console.ReadLine();
+
+                    if (flightID != null || fromLocation != null || toLocation != null)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Flight added successfully.");
+                        Console.ResetColor();
+                        AddTypeOfSeat();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("Incomplete information. Please enter Flight ID, From Location, and To Location.");
+                        Console.ResetColor();
+                    }
+                    break;  // Exit the loop if the flight information is entered correctly.
+                }
+                catch (FormatException)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Invalid input. Flight ID must be a string.");
+                    Console.ResetColor();
+                }
+                catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"An error occurred: {ex.Message}");
+                    Console.ResetColor();
+                }
+            }
+        }
+
+        private bool CheckFlightIdUnique(string flightID)
+        {
+            return flights.All(flight => flight.FlightID != flightID);
         }
 
         public void RemoveFlight()
@@ -65,39 +109,53 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void AddTypeOfSeat()
         {
-
             while (true)
             {
-                Console.WriteLine("Choose type of seat you want to add:");
-                Console.WriteLine("1. Business Class");
-                Console.WriteLine("2. Economy Class");
-                Console.WriteLine("3. Back");
-                int choose = int.Parse(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Choose type of seat you want to add:");
+                    Console.WriteLine("1. Business Class");
+                    Console.WriteLine("2. Economy Class");
+                    Console.WriteLine("3. Back");
+                    int choose = int.Parse(Console.ReadLine());
 
-                if (choose == 1)
-                {
-                    Console.WriteLine("Seat ID:");
-                    businessClassflight.SeatID = Console.ReadLine();
-                    Console.WriteLine("Cabin:");
-                    businessClassflight.Cabin = Console.ReadLine();
-                    flights.Add(businessClassflight);
+                    if (choose == 1)
+                    {
+                        Console.WriteLine("Seat ID:");
+                        businessClassflight.SeatID = Console.ReadLine();
+                        Console.WriteLine("Cabin:");
+                        businessClassflight.Cabin = Console.ReadLine();
+                        flights.Add(businessClassflight);
+                    }
+                    else if (choose == 2)
+                    {
+                        Console.WriteLine("Seat ID:");
+                        economyClassflight.SeatID = Console.ReadLine();
+                        Console.WriteLine("Cabin:");
+                        economyClassflight.Cabin = Console.ReadLine();
+                        flights.Add(economyClassflight);
+                    }
+                    else if (choose == 3)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine("Wrong input!");
+                        Console.ResetColor();
+                    }
                 }
-                else if (choose == 2)
-                {
-                    Console.WriteLine("Seat ID:");
-                    economyClassflight.SeatID = Console.ReadLine();
-                    Console.WriteLine("Cabin:");
-                    economyClassflight.Cabin = Console.ReadLine();
-                    flights.Add(economyClassflight);
-                }
-                else if (choose == 3)
-                {
-                    break;
-                }
-                else
+                catch (FormatException)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine("Wrong!");
+                    Console.WriteLine("Invalid input. Please enter a valid numeric choice.");
+                    Console.ResetColor();
+                }
+                catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"An error occurred: {ex.Message}");
                     Console.ResetColor();
                 }
             }
@@ -123,6 +181,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             {
                 seatToRemove = flights.FirstOrDefault(flight => flight is EconomyClassflight && flight.SeatID == SeatIdToDelete);
             }
+
             if (seatToRemove != null)
             {
                 flights.Remove(seatToRemove);

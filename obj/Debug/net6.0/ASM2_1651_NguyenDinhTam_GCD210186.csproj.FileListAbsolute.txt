@@ -12,3 +12,4 @@ D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_Ng
 D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net6.0\ASM2_1651_NguyenDinhTam_GCD210186.pdb
 D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net6.0\ASM2_1651_NguyenDinhTam_GCD210186.genruntimeconfig.cache
 D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net6.0\ref\ASM2_1651_NguyenDinhTam_GCD210186.dll
+D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net6.0\ASM2_1651_NguyenDinhTam_GCD210186.sourcelink.json
