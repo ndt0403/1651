@@ -6,13 +6,13 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 {
     internal class ListFlight : InterfaceData
     {
-        private List<Flight> flights;
-        EconomyClassflight economyClassflight = new EconomyClassflight();
-        BusinessClassflight businessClassflight = new BusinessClassflight();
+        private List<Flight> flights;  // A list to store Flight objects.
+        EconomyClassflight economyClassflight = new EconomyClassflight();  // An instance of Economy Class seat.
+        BusinessClassflight businessClassflight = new BusinessClassflight();  // An instance of Business Class seat.
 
         public ListFlight()
         {
-            flights = new List<Flight>();
+            flights = new List<Flight>();  // Initialize the flights list when an object is created.
         }
 
         public void DisplayFlight()
@@ -20,20 +20,19 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             // Display information for each flight in the list.
             foreach (Flight flight in flights)
             {
-                flight.displayInformation();
+                flight.displayInformation();  // Call the displayInformation method of Flight class.
             }
         }
 
         public void Add()
         {
-
             while (true)
             {
                 try
                 {
                     Console.WriteLine("Enter Flight ID:");
                     string flightID = Console.ReadLine();
-                 
+
                     if (!CheckFlight(flightID))
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -59,10 +58,10 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         continue;
                     }
 
-                    flights.Add(newFlight);
+                    flights.Add(newFlight);  // Add the new flight to the flights list.
 
-                    AddTypeOfSeat();
-                    break; // Exit the loop if the flight information is entered correctly.
+                    AddTypeOfSeat();  // Call the method to add a type of seat for the flight.
+                    break;  // Exit the loop if the flight information is entered correctly.
                 }
                 catch (FormatException)
                 {
@@ -81,6 +80,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         private bool CheckFlight(string flightID)
         {
+            // Check if the Flight ID already exists in the flights list.
             return flights.All(flight => flight.FlightID != flightID);
         }
 
@@ -111,12 +111,11 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void AddTypeOfSeat()
         {
-
             while (true)
             {
                 try
                 {
-                    Console.WriteLine("Choose type of seat you want to add:");
+                    Console.WriteLine("Choose the type of seat you want to add:");
                     Console.WriteLine("1. Business Class");
                     Console.WriteLine("2. Economy Class");
                     Console.WriteLine("3. Back");
@@ -128,7 +127,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         businessClassflight.SeatID = Console.ReadLine();
                         Console.WriteLine("Cabin:");
                         businessClassflight.Cabin = Console.ReadLine();
-                        flights.Add(businessClassflight);
+                        flights.Add(businessClassflight);  // Add the Business Class seat to the flights list.
                     }
                     else if (choose == 2)
                     {
@@ -136,11 +135,11 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         economyClassflight.SeatID = Console.ReadLine();
                         Console.WriteLine("Cabin:");
                         economyClassflight.Cabin = Console.ReadLine();
-                        flights.Add(economyClassflight);
+                        flights.Add(economyClassflight);  // Add the Economy Class seat to the flights list.
                     }
                     else if (choose == 3)
                     {
-                        break;
+                        break;  // Exit the loop.
                     }
                     else
                     {
@@ -166,12 +165,12 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 
         public void RemoveTypeOfSeat(string flightID)
         {
-            Console.WriteLine("Choose type of seat you want to remove:");
+            Console.WriteLine("Choose the type of seat you want to remove:");
             Console.WriteLine("1. Business Class");
             Console.WriteLine("2. Economy Class");
             int choose = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter type of seat you want to remove:");
+            Console.WriteLine("Enter the type of seat (Seat ID) you want to remove:");
             string SeatIdToDelete = Console.ReadLine();
 
             Flight seatToRemove = null;
@@ -208,7 +207,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             {
                 if (flight is EconomyClassflight)
                 {
-                    flight.displayInformation();
+                    flight.displayInformation();  // Display Economy Class seat information.
                     Console.WriteLine("--------------------");
                 }
             }
@@ -219,7 +218,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             {
                 if (flight is BusinessClassflight)
                 {
-                    flight.displayInformation();
+                    flight.displayInformation();  // Display Business Class seat information.
                     Console.WriteLine("--------------------");
                 }
             }
@@ -231,21 +230,22 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             {
                 if (seat.SeatID == Sid)
                 {
-                    return seat;
+                    return seat;  // Return the seat with the matching Seat ID.
                 }
             }
-            return null;
+            return null;  // If no matching seat is found, return null.
         }
+
         public Flight GetFlightByID(string Fid)
         {
             foreach (Flight flight in flights)
             {
                 if (flight.FlightID == Fid)
                 {
-                    return flight;
+                    return flight;  // Return the flight with the matching Flight ID.
                 }
             }
-            return null;
+            return null;  // If no matching flight is found, return null.
         }
     }
 }
