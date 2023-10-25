@@ -24,7 +24,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             }
         }
 
-        public void AddFlight()
+        public void Add()
         {
 
             while (true)
@@ -84,7 +84,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             return flights.All(flight => flight.FlightID != flightID);
         }
 
-        public void RemoveFlight()
+        public void Remove()
         {
             Console.WriteLine("Enter Flight ID to remove:");
             string flightIDToDelete = Console.ReadLine();

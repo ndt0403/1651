@@ -10,9 +10,9 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
     interface InterfaceData
     {
         // Method declaration for adding data.
-        void AddFlight();
+        void Add();
 
         // Method declaration for removing data.
-        void RemoveFlight();
+        void Remove();
     }
 }

@@ -112,6 +112,8 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                 Console.WriteLine("Ticket Information:");
                 Console.WriteLine("Ticket ID: " + TicketID);
                 Console.WriteLine("Flight ID: " + Flight.FlightID);
+                Console.WriteLine("From: " + flight.FromLocation);
+                Console.WriteLine("To: " + flight.ToLocation);
                 Console.WriteLine("Seat ID: " + Flight.SeatID);
                 Console.WriteLine("Cabin: " + Flight.Cabin);
                 Console.WriteLine("Customer Name: " + Customer.Name);

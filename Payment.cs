@@ -8,6 +8,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
 {
     internal class Payment
     {
+        private ListFlight listFlight;
         private string paymentId;
         private decimal amount;
         private DateTime paymentDate;
@@ -80,6 +81,8 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                 {
                     // Display information for each associated ticket.
                     Console.WriteLine("Ticket ID: " + ticket.TicketID);
+                    Console.WriteLine("From: " + ticket.Flight.FromLocation);
+                    Console.WriteLine("To: " + ticket.Flight.ToLocation);
                     Console.WriteLine("Seat ID: " + ticket.Flight.SeatID);
                     Console.WriteLine("Cabin: " + ticket.Flight.Cabin);
                     Console.WriteLine("Name's Customer: " + ticket.Customer.Name);

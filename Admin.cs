@@ -9,13 +9,14 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
         private ListFlight listFlight;  // Initialize a list to store flights.
         private ListTicket listTicket;  // Initialize a list to store tickets.
         private Ticket ticket;          // Initialize a single ticket object.
-
+        private ListAirlineStaff listAirlineStaff;
         public Admin()
         {
             program = new Program();
             listFlight = new ListFlight();
             listTicket = new ListTicket();
             ticket = new Ticket();
+            listAirlineStaff = new ListAirlineStaff();
         }
 
         public void DisplayMenu()
@@ -31,20 +32,21 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("5. Logout");
                 Console.ResetColor();
+                Console.WriteLine("6. Add Airline Staff");
                 Console.Write("Enter your choice: ");
                 string choice = Console.ReadLine();
 
                 switch (choice)
                 {
                     case "1":
-                        listFlight.AddFlight();
+                        listFlight.Add();
                         break;
                     case "2":
                         listFlight.DisplayFlight();
                         break;
                     case "3":
                         listFlight.DisplayFlight();
-                        listFlight.RemoveFlight();
+                        listFlight.Remove();
                         break;
                     case "4":
                         listFlight.DisplayFlight();
@@ -54,8 +56,11 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
                         isDisplayMenu = false;
                         LogOut();
                         break;
+                    case "6":
+                        listAirlineStaff.Add();
+                        break;
                     default:
-                        Console.WriteLine("Invalid choice. Please try again (1 to 5).");
+                        Console.WriteLine("Invalid choice. Please try again (1 to 6).");
                         break;
                 }
                 Console.WriteLine();

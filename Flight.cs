@@ -61,8 +61,6 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             Console.WriteLine("Flight ID: " + FlightID);
             Console.WriteLine("From: " + FromLocation);
             Console.WriteLine("To: " + ToLocation);
-            Console.WriteLine("Seat ID: " + SeatID);
-            Console.WriteLine("Cabin: " + Cabin);
         }
     }
 }

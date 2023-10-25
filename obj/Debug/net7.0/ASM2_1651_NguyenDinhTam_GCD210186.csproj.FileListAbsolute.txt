@@ -1,0 +1,5 @@
+D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net7.0\ASM2_1651_NguyenDinhTam_GCD210186.GeneratedMSBuildEditorConfig.editorconfig
+D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net7.0\ASM2_1651_NguyenDinhTam_GCD210186.AssemblyInfoInputs.cache
+D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net7.0\ASM2_1651_NguyenDinhTam_GCD210186.AssemblyInfo.cs
+D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net7.0\ASM2_1651_NguyenDinhTam_GCD210186.csproj.CoreCompileInputs.cache
+D:\1651 Advanced Programming\Code\ASM2_1651_NguyenDinhTam_GCD210186\ASM2_1651_NguyenDinhTam_GCD210186\obj\Debug\net7.0\ASM2_1651_NguyenDinhTam_GCD210186.sourcelink.json

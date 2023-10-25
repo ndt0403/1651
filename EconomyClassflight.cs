@@ -14,7 +14,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
             // Default constructor - It doesn't initialize any specific properties.
         }
 
-        public EconomyClassflight(string flightID,string seatID, string cabin) : base(flightID, seatID, cabin)
+        public EconomyClassflight(string flightID, string seatID, string fromLocation, string toLocation, string cabin) : base(flightID, fromLocation, toLocation, seatID, cabin)
         {
             // Parameterized constructor - Initializes the properties by calling the base class constructor.
         }

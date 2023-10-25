@@ -15,7 +15,7 @@ namespace ASM2_1651_NguyenDinhTam_GCD210186
         public BusinessClassflight() { }
 
         // Parameterized constructor for the BusinessClassflight class.
-        public BusinessClassflight(string flightID, string seatID, string cabin) : base(flightID, seatID, cabin)
+        public BusinessClassflight(string flightID, string seatID, string fromLocation, string toLocation, string cabin) : base(flightID, fromLocation, toLocation, seatID, cabin)
         { }
 
         // Override the displayInformation method from the base class (Flight).
